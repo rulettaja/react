@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 
-const MediaItem = ({ item, setSelectedItem }) => {
+const MediaItem = ({ item }) => {
   return (
     <tr key={item.filename}>
       <td>

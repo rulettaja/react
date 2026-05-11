@@ -1,10 +1,8 @@
-import MediaItem from '../components/Mediaitem';
-import SingleView from '../components/SingleView';
+import MediaItem from '../components/MediaItem';
 import { useEffect, useState } from 'react';
 import { fetchData } from '../utils/fetchData';
 
 const Home = () => {
-  const [selectedItem, setSelectedItem] = useState(null);
   const [mediaArray, setMediaArray] = useState([]);
 
   useEffect(() => {
@@ -41,7 +39,6 @@ const Home = () => {
   return (
     <>
       <h2>My media</h2>
-      <SingleView item={selectedItem} setSelectedItem={setSelectedItem} />
 
       <table>
         <thead>
@@ -57,11 +54,7 @@ const Home = () => {
         </thead>
         <tbody>
           {mediaArray.map((item) => (
-            <MediaItem
-              key={item.filename}
-              setSelectedItem={setSelectedItem}
-              item={item}
-            />
+            <MediaItem key={item.filename} item={item} />
           ))}
         </tbody>
       </table>
